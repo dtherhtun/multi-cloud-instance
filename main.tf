@@ -1,5 +1,5 @@
 module "aws" {
-  source = "DTherHtun/instance/multicloud//modules/aws"
+  source  = "DTherHtun/instance/multicloud//modules/aws"
   version = "0.2.2"
   environment = {
     name             = "AWS"
@@ -8,8 +8,8 @@ module "aws" {
 }
 
 module "azure" {
-  source = "DTherHtun/instance/multicloud//modules/azure"
-  version = "0.2.2"
+  source   = "DTherHtun/instance/multicloud//modules/azure"
+  version  = "0.2.2"
   location = var.azure.location
   environment = {
     name             = "Azure"
@@ -19,7 +19,7 @@ module "azure" {
 
 module "gcp" {
   source     = "DTherHtun/instance/multicloud//modules/gcp"
-  version = "0.2.2"
+  version    = "0.2.2"
   project_id = var.gcp.project
   environment = {
     name             = "GCP"
@@ -28,7 +28,7 @@ module "gcp" {
 }
 
 module "loadbalancer" {
-  source = "DTherHtun/instance/multicloud//modules/loadbalancer"
+  source  = "DTherHtun/instance/multicloud//modules/loadbalancer"
   version = "0.2.2"
   addresses = [
     module.aws.network_address,
